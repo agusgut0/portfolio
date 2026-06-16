@@ -1,0 +1,22 @@
+.about-section {
+    padding: 32px 0;
+    border-bottom: 1px solid #1a1a2e;
+}
+
+.section-heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.about-text {
+    font-size: 0.92rem;
+    color: #a0a0b8;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.about-text:last-child {
+    margin-bottom: 0;
+}

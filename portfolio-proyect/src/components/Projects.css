@@ -1,0 +1,10 @@
+.projects-section {
+    padding: 32px 0;
+    border-bottom: 1px solid #1a1a2e;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
