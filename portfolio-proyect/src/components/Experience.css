@@ -1,0 +1,99 @@
+.experience-section {
+    padding: 60px 0;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.experience-item {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.experience-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(79, 172, 254, 0.1);
+    color: #4facfe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.experience-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+}
+
+.experience-content {
+    flex: 1;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.experience-company {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+.experience-date {
+    background-color: rgba(79, 172, 254, 0.15);
+    color: #4facfe;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.experience-role {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #a0a0a0;
+    margin: 0 0 15px 0;
+}
+
+.experience-description {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.experience-description p {
+    margin: 0 0 10px 0;
+}
+
+.experience-description p:last-child {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .experience-item {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .experience-date {
+        align-self: flex-start;
+    }
+}

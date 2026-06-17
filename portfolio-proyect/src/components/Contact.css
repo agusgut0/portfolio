@@ -1,0 +1,106 @@
+.contact-section {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto 0;
+    text-align: left; /* Keep form labels left-aligned */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: rgba(79, 172, 254, 0.03);
+    border: 1px solid rgba(79, 172, 254, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.form-group input,
+.form-group textarea {
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid rgba(79, 172, 254, 0.2);
+    color: #fff;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.15);
+}
+
+.contact-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #4facfe;
+    color: #0a0a0f;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+.contact-submit-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.contact-submit-btn:hover {
+    background: #3d9bf0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(79, 172, 254, 0.25);
+}
+
+.contact-submit-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .contact-submit-btn {
+        width: 100%;
+        align-self: stretch;
+    }
+}

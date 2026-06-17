@@ -1,31 +1,99 @@
 .tech-section {
     padding: 32px 0;
     border-bottom: 1px solid #1a1a2e;
+    overflow: hidden;
 }
 
-.tech-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+/* === Carrusel Infinito (Marquee) === */
+.tech-marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
 }
 
+/* Sombras en los bordes para difuminar la entrada y salida */
+.tech-marquee-fade {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.tech-marquee-fade.left {
+    left: 0;
+    background: linear-gradient(to right, #0a0a0f, transparent);
+}
+
+.tech-marquee-fade.right {
+    right: 0;
+    background: linear-gradient(to left, #0a0a0f, transparent);
+}
+
+/* Pista deslizante */
+.tech-marquee-track {
+    display: inline-flex;
+    gap: 16px;
+    /* La animación mueve la pista hasta la mitad exacta, luego vuelve a empezar */
+    animation: marquee 25s linear infinite;
+    padding-left: 16px;
+}
+
+/* Pausar al pasar el mouse */
+.tech-marquee-wrapper:hover .tech-marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Se traslada un 50% de todo el contenedor, que equivale a 1 array completo de items */
+        transform: translateX(calc(-50% - 8px));
+    }
+}
+
+/* === Pastillas de Tecnología === */
 .tech-pill {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(79, 172, 254, 0.08);
-    color: #4facfe;
-    border: 1px solid rgba(79, 172, 254, 0.2);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.82rem;
-    font-weight: 600;
+    gap: 8px;
+    background: rgba(79, 172, 254, 0.05);
+    color: #e0e0e0;
+    /* Color de texto más claro para que resalte el icono */
+    border: 1px solid rgba(79, 172, 254, 0.15);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
     transition: all 0.2s ease;
     cursor: default;
+    flex-shrink: 0;
+}
+
+.tech-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4facfe;
+    /* El icono es de color celeste */
 }
 
 .tech-pill:hover {
-    background: rgba(79, 172, 254, 0.15);
+    background: rgba(79, 172, 254, 0.12);
     border-color: rgba(79, 172, 254, 0.4);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 172, 254, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .tech-marquee-fade {
+        width: 40px;
+    }
 }
