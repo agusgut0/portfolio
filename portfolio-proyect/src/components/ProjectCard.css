@@ -1,12 +1,6 @@
 .project-card {
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-}
-
-.project-details {
-    flex: 1;
-    min-width: 0;
+    display: block;
+    position: relative;
 }
 
 .project-header {
@@ -18,6 +12,13 @@
 
 .project-icon {
     font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.project-icon-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
     flex-shrink: 0;
 }
 
@@ -38,6 +39,42 @@
     color: #a0a0b8;
     line-height: 1.6;
     margin-bottom: 12px;
+}
+
+.demo-credentials {
+    background: rgba(79, 172, 254, 0.05);
+    border: 1px solid rgba(79, 172, 254, 0.15);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    font-size: 0.82rem;
+    width: fit-content;
+}
+
+.credentials-title {
+    color: #4facfe;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.credentials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #a0a0b8;
+}
+
+.credentials-list li {
+    margin-bottom: 4px;
+}
+
+.credentials-list li:last-child {
+    margin-bottom: 0;
+}
+
+.credentials-list span {
+    font-weight: 600;
+    color: #d0d0e0;
 }
 
 .project-tech {
@@ -62,30 +99,41 @@
     gap: 10px;
 }
 
-.action-btn {
+.github-action-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
+    gap: 10px;
+    padding: 10px 20px;
     border-radius: 8px;
-    background: #151520;
-    color: #a0a0b8;
-    border: 1px solid #1e1e30;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-weight: 600;
     text-decoration: none;
-    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
-.action-btn:hover {
-    color: #4facfe;
-    border-color: #4facfe;
-    background: rgba(79, 172, 254, 0.08);
+.github-action-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.project-preview-wrapper {
+    float: right;
+    margin-left: 24px;
+    margin-bottom: 16px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
 }
 
 .project-preview {
-    flex-shrink: 0;
-    width: 240px;
-    height: 150px;
+    position: relative;
+    width: 480px;
+    height: 270px;
     border-radius: 10px;
     overflow: hidden;
     background: #151520;
@@ -102,14 +150,38 @@
     transform: scale(1.05);
 }
 
+.demo-external-btn {
+    background: #4facfe;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(79, 172, 254, 0.4);
+    transition: all 0.3s ease;
+}
+
+.demo-external-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(79, 172, 254, 0.6);
+    background: #3d9bf0;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-    .project-card {
-        flex-direction: column;
+    .project-preview-wrapper {
+        float: none;
+        margin-left: 0;
+        margin-top: 16px;
+        align-items: center;
     }
-
     .project-preview {
         width: 100%;
-        height: 180px;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 }

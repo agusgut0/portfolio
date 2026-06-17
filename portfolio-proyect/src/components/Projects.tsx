@@ -5,13 +5,15 @@ import './Projects.css';
 export const Projects = () => {
     const myProjects = [
         {
-            title: "Sistema de Catálogo Interactivo",
+            title: "CineInfo",
             role: "Fullstack Developer",
-            description: "Plataforma Full Stack para gestión de películas con panel de administración CRUD completo. Permite control de inventario en tiempo real.",
-            techStack: ["React", "Bootstrap", "Express", "Sequelize"],
-            githubLink: "https://github.com/tu-usuario/tu-repo",
-            demoLink: "#",
-            imageSrc: "/TU-IMAGEN-PROYECTO.png"
+            description: "Aplicación web Full Stack desarrollada para la UTN FRC utilizando Node.js, Express y Sequelize. Se trata de un sistema de gestión cinematográfica que implementa APIs REST con operaciones CRUD completas y pruebas unitarias, permitiendo a usuarios autenticados administrar información sobre películas, directores y premiaciones de manera eficiente.",
+            techStack: ["React", "Bootstrap", "Node.js", "Express", "Sequelize", "SQLite", "Jest", "JWT"],
+            githubLink: "https://github.com/agusgut0/dds-tpi",
+            demoLink: "https://cineinfo-six.vercel.app/",
+            imageSrc: "/gifs/inicioCineInfo.gif",
+            demoCredentials: { user: "admin", pass: "admin" },
+            iconSrc: "/cineInfoLogo.svg"
         },
         // Proyecto de ejemplo para probar el carrusel
         {
@@ -60,6 +62,8 @@ export const Projects = () => {
                                     githubLink={project.githubLink}
                                     demoLink={project.demoLink}
                                     imageSrc={project.imageSrc}
+                                    demoCredentials={project.demoCredentials}
+                                    iconSrc={project.iconSrc}
                                 />
                             </div>
                         ))}
