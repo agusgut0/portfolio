@@ -7,7 +7,7 @@ export const Projects = () => {
         {
             title: "CineInfo",
             role: "Fullstack Developer",
-            description: "Aplicación web Full Stack desarrollada para la UTN FRC utilizando Node.js, Express y Sequelize. Se trata de un sistema de gestión cinematográfica que implementa APIs REST con operaciones CRUD completas y pruebas unitarias, permitiendo a usuarios autenticados administrar información sobre películas, directores y premiaciones de manera eficiente.",
+            description: "Aplicación web Full Stack desarrollada como proyecto universitario para la UTN FRC. Se trata de un sistema de gestión de películas que implementa APIs REST con operaciones CRUD completas y pruebas unitarias, permitiendo a usuarios autenticados administrar información sobre películas, directores y premiaciones.",
             techStack: ["React", "Bootstrap", "Node.js", "Express", "Sequelize", "SQLite", "Jest", "JWT"],
             githubLink: "https://github.com/agusgut0/dds-tpi",
             demoLink: "https://cineinfo-six.vercel.app/",
@@ -18,7 +18,7 @@ export const Projects = () => {
         {
             title: "JobTracker",
             role: "Fullstack Developer",
-            description: "Aplicación web Full Stack Serverless desarrollada con JavaScript Vanilla bajo arquitectura estática MVC. Un organizador inteligente para la búsqueda laboral que automatiza la generación de prompts optimizados para IA (Claude/ChatGPT), adapta CVs en tiempo real con persistencia en LocalStorage y cuenta con un sistema robusto de backup en archivos JSON, superando con éxito los filtros ATS de reclutamiento.",
+            description: "Aplicación web Full Stack Serverless desarrollada con JavaScript bajo arquitectura estática MVC. Se trata de un organizador inteligente para la búsqueda laboral que automatiza la generación de prompts optimizados para IA, adapta CVs a cada puesto superando con éxito los filtros ATS de reclutamiento.",
             techStack: ["JavaScript Vanilla", "HTML5", "CSS3", "MVC", "LocalStorage", "JSON Backup", "AI Prompts"],
             githubLink: "https://github.com/agusgut0/JobTracker",
             demoLink: "https://job-tracker-black-psi.vercel.app/",
@@ -46,10 +46,10 @@ export const Projects = () => {
                         <polyline points="15 18 9 12 15 6"></polyline>
                     </svg>
                 </button>
-                
+
                 <div className="carousel-viewport">
-                    <div 
-                        className="carousel-track" 
+                    <div
+                        className="carousel-track"
                         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                     >
                         {myProjects.map((project, index) => (
@@ -79,8 +79,8 @@ export const Projects = () => {
             {/* Indicadores de carrusel (puntitos) */}
             <div className="carousel-indicators">
                 {myProjects.map((_, index) => (
-                    <div 
-                        key={index} 
+                    <div
+                        key={index}
                         className={`indicator-dot ${index === currentIndex ? 'active' : ''}`}
                         onClick={() => setCurrentIndex(index)}
                     />
