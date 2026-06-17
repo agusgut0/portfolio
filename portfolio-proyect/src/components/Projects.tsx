@@ -15,15 +15,15 @@ export const Projects = () => {
             demoCredentials: { user: "admin", pass: "admin" },
             iconSrc: "/cineInfoLogo.svg"
         },
-        // Proyecto de ejemplo para probar el carrusel
         {
-            title: "E-commerce de Ropa",
-            role: "Frontend Developer",
-            description: "Tienda online completa con carrito de compras, pasarela de pagos y panel de usuario.",
-            techStack: ["React", "Node.js", "MongoDB"],
-            githubLink: "https://github.com/tu-usuario/tu-repo",
-            demoLink: "#",
-            imageSrc: "/TU-IMAGEN-PROYECTO.png"
+            title: "JobTracker",
+            role: "Fullstack Developer",
+            description: "Aplicación web Full Stack Serverless desarrollada con JavaScript Vanilla bajo arquitectura estática MVC. Un organizador inteligente para la búsqueda laboral que automatiza la generación de prompts optimizados para IA (Claude/ChatGPT), adapta CVs en tiempo real con persistencia en LocalStorage y cuenta con un sistema robusto de backup en archivos JSON, superando con éxito los filtros ATS de reclutamiento.",
+            techStack: ["JavaScript Vanilla", "HTML5", "CSS3", "MVC", "LocalStorage", "JSON Backup", "AI Prompts"],
+            githubLink: "https://github.com/agusgut0/JobTracker",
+            demoLink: "https://job-tracker-black-psi.vercel.app/",
+            imageSrc: "/gifs/jobTrackerDemo.gif",
+            iconSrc: "/jobTrackerLogo.svg"
         }
     ];
 
