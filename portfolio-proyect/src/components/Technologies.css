@@ -2,6 +2,8 @@
     padding: 32px 0;
     border-bottom: 1px solid #1a1a2e;
     overflow: hidden;
+    width: 100%;
+    min-width: 0;
 }
 
 /* === Carrusel Infinito (Marquee) === */
@@ -92,7 +94,7 @@
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .tech-marquee-fade {
         width: 40px;
     }

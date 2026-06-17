@@ -23,6 +23,7 @@
     flex-direction: column;
     gap: 2px;
     flex: 1;
+    min-width: 0;
 }
 
 .profile-name {
@@ -51,16 +52,91 @@
     font-size: 0.8rem;
 }
 
+/* Mobile social icons — hidden on desktop */
+.profile-social-mobile {
+    display: none;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 15px;
+    flex-shrink: 0;
+}
+
+.btn-primary,
+.btn-secondary {
+    background: transparent;
+    color: #e0e0e0;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid #e0e0e0;
+    white-space: nowrap;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background: rgba(224, 224, 224, 0.1);
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(224, 224, 224, 0.15);
+}
+
 /* Responsive */
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .profile-top {
         flex-direction: column;
         text-align: center;
         align-items: center;
     }
 
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-name {
+        font-size: 1.4rem;
+    }
+
     .profile-location {
         justify-content: center;
+    }
+
+    /* Show social icons on mobile */
+    .profile-social-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 8px;
+    }
+
+    .social-mobile-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #d0d0e0;
+        text-decoration: none;
+        transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-mobile-link:hover {
+        color: #4facfe;
+        transform: translateY(-2px);
+    }
+
+    .profile-actions {
+        margin: 10px 0 0 0;
+        width: 100%;
+        max-width: 250px;
     }
 
     .dev-icon-wrapper {

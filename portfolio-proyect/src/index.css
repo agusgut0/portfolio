@@ -8,24 +8,7 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  /* Escalado de layout idéntico al zoom nativo del navegador */
-  zoom: 1.5;
-}
-
-/* En tablets / pantallas pequeñas podemos reducir el zoom para que no se desborde */
-@media (max-width: 1200px) {
-  body {
-    zoom: 1.25;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    zoom: 1; /* Zoom normal en celulares */
-  }
+  font-size: 16px;
 }
 
 body {
@@ -34,12 +17,29 @@ body {
   color: #e0e0e0;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Escalado SOLO para pantallas de escritorio grandes, usando font-size en vez de zoom */
+@media (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 22px;
+  }
 }
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
 }
 
 /* Scrollbar */

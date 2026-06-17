@@ -1,6 +1,8 @@
 .about-section {
     padding: 32px 0;
     border-bottom: 1px solid #1a1a2e;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .section-heading {

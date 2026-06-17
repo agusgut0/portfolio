@@ -71,6 +71,8 @@
     color: #b0b0b0;
     font-size: 0.95rem;
     line-height: 1.6;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .experience-description p {

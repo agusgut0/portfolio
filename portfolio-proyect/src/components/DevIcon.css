@@ -43,9 +43,8 @@
 }
 
 /* Responsive */
-@media (max-width: 500px) {
-    .dev-icon {
-        width: 120px;
-        height: 120px;
+@media (max-width: 768px) {
+    .dev-icon-wrapper {
+        display: none;
     }
 }
