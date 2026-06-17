@@ -1,0 +1,51 @@
+/* Entrada: deslizar desde abajo + fade in */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Flotación sutil infinita */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+.dev-icon-wrapper {
+    /* Animación de entrada */
+    animation: fadeInUp 0.8s ease-out forwards,
+               float 3s ease-in-out 0.8s infinite;
+    opacity: 0; /* Empieza invisible, fadeInUp lo revela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dev-icon {
+    width: 180px;
+    height: 180px;
+    filter: drop-shadow(0 4px 20px rgba(79, 172, 254, 0.15));
+    transition: filter 0.3s ease;
+}
+
+.dev-icon:hover {
+    filter: drop-shadow(0 6px 28px rgba(79, 172, 254, 0.3));
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .dev-icon {
+        width: 120px;
+        height: 120px;
+    }
+}

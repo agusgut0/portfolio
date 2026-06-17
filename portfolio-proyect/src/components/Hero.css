@@ -10,8 +10,8 @@
 }
 
 .profile-avatar {
-    width: 90px;
-    height: 90px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #4facfe;
@@ -22,6 +22,7 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
+    flex: 1;
 }
 
 .profile-name {
@@ -50,51 +51,6 @@
     font-size: 0.8rem;
 }
 
-.profile-links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.profile-link-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-.profile-link-btn.primary {
-    background: #4facfe;
-    color: #0a0a0f;
-    padding: 6px 16px;
-    gap: 6px;
-}
-
-.profile-link-btn.primary:hover {
-    background: #3d9bf0;
-    box-shadow: 0 2px 12px rgba(79, 172, 254, 0.3);
-}
-
-.profile-link-btn.icon {
-    background: #151520;
-    color: #a0a0b8;
-    width: 36px;
-    height: 36px;
-    border: 1px solid #1e1e30;
-}
-
-.profile-link-btn.icon:hover {
-    color: #4facfe;
-    border-color: #4facfe;
-    background: rgba(79, 172, 254, 0.08);
-}
-
 /* Responsive */
 @media (max-width: 500px) {
     .profile-top {
@@ -107,7 +63,7 @@
         justify-content: center;
     }
 
-    .profile-links {
-        justify-content: center;
+    .dev-icon-wrapper {
+        display: none;
     }
 }

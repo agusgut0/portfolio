@@ -3,8 +3,100 @@
     border-bottom: 1px solid #1a1a2e;
 }
 
-.projects-list {
+/* Contenedor del carrusel */
+.carousel-container {
     display: flex;
-    flex-direction: column;
-    gap: 28px;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+.carousel-viewport {
+    flex: 1;
+    min-width: 0; /* Previene que el contenido flex lo estire */
+    overflow: hidden; /* Oculta los proyectos que no están en la vista actual */
+    border-radius: 12px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.carousel-slide {
+    flex: 0 0 100%; /* Obliga a que sea exactamente el 100% del contenedor */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 4px; /* Un mini aire para que no se peguen si hay sombras */
+}
+
+/* Botones con bordes (flechas) */
+.carousel-btn {
+    background: transparent;
+    border: 2px solid #4facfe;
+    color: #4facfe;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Evita que el botón se aplaste */
+}
+
+.carousel-btn:hover {
+    background: rgba(79, 172, 254, 0.1);
+    box-shadow: 0 0 12px rgba(79, 172, 254, 0.4);
+    transform: scale(1.05);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+/* Indicadores inferiores (puntitos) */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.indicator-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 8px; /* Usar px en vez de % evita el glitch visual en Chrome/Safari al animar a otra medida en px */
+    background-color: #2a2a3a;
+    cursor: pointer;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.indicator-dot.active {
+    background-color: #4facfe;
+    width: 24px;
+}
+
+.indicator-dot:hover {
+    background-color: #3d9bf0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-container {
+        gap: 8px;
+    }
+    
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .carousel-btn svg {
+        width: 18px;
+        height: 18px;
+    }
 }

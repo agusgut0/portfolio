@@ -3,17 +3,21 @@ import { AboutMe } from './components/AboutMe';
 import { Technologies } from './components/Technologies';
 import { Projects } from './components/Projects';
 import { Footer } from './components/Footer';
+import { FloatingSidebars } from './components/FloatingSidebars';
 import './App.css';
 
 function App() {
   return (
-    <div className="portfolio-container">
-      <Hero />
-      <AboutMe />
-      <Technologies />
-      <Projects />
-      <Footer />
-    </div>
+    <>
+      <FloatingSidebars />
+      <div className="portfolio-container">
+        <Hero />
+        <AboutMe />
+        <Technologies />
+        <Projects />
+        <Footer />
+      </div>
+    </>
   );
 }
 

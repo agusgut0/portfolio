@@ -6,38 +6,17 @@
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    align-items: center;
+    gap: 4px;
+}
+
+.footer-year {
+    font-size: 0.85rem;
+    color: #707088;
 }
 
 .footer-name {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    color: #ffffff;
-}
-
-.footer-links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-icon-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    background: #151520;
     color: #a0a0b8;
-    border: 1px solid #1e1e30;
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.footer-icon-btn:hover {
-    color: #4facfe;
-    border-color: #4facfe;
-    background: rgba(79, 172, 254, 0.08);
 }

@@ -11,6 +11,24 @@ html {
 }
 
 body {
+  /* Escalado de layout idéntico al zoom nativo del navegador */
+  zoom: 1.5;
+}
+
+/* En tablets / pantallas pequeñas podemos reducir el zoom para que no se desborde */
+@media (max-width: 1200px) {
+  body {
+    zoom: 1.25;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    zoom: 1; /* Zoom normal en celulares */
+  }
+}
+
+body {
   min-height: 100vh;
   background-color: #0a0a0f;
   color: #e0e0e0;

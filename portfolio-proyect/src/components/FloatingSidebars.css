@@ -1,0 +1,111 @@
+/* ===== Contenedor base de ambas barras ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    pointer-events: none; /* Deja pasar clicks excepto en hijos */
+}
+
+.sidebar > * {
+    pointer-events: auto; /* Los hijos sí reciben clicks */
+}
+
+.sidebar-left {
+    left: 24px;
+}
+
+.sidebar-right {
+    right: 24px;
+}
+
+/* ===== Glow radial de fondo ===== */
+.sidebar-glow {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.sidebar-glow-cyan {
+    background: radial-gradient(circle, #4facfe 0%, transparent 70%);
+    left: -80px;
+}
+
+.sidebar-glow-violet {
+    background: radial-gradient(circle, #a29bfe 0%, transparent 70%);
+    right: -80px;
+}
+
+/* ===== Líneas verticales decorativas ===== */
+.sidebar-line {
+    width: 1px;
+    height: 80px;
+}
+
+/* Línea de arriba: aparece desde arriba */
+.sidebar-line-top {
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3));
+    margin-bottom: 20px;
+}
+
+/* Línea de abajo: desaparece hacia abajo */
+.sidebar-line-bottom {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+    margin-top: 20px;
+}
+
+/* ===== Iconos de redes (izquierda) ===== */
+.sidebar-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.sidebar-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d0d0e0;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.sidebar-icon-link:hover {
+    color: #4facfe;
+    transform: translateY(-2px);
+}
+
+/* ===== Email vertical (derecha) ===== */
+.sidebar-email {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-size: 0.55rem;
+    letter-spacing: 1.5px;
+    color: #d0d0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.sidebar-email:hover {
+    color: #a29bfe;
+}
+
+/* ===== Responsive: ocultar en mobile ===== */
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+}
