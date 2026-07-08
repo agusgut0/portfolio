@@ -1,75 +1,45 @@
-# React + TypeScript + Vite
+# Portfolio — Agustín Gutiérrez
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio web personal, desarrollado como carta de presentación profesional y showcase de proyectos.
 
-Currently, two official plugins are available:
+🔗 **Demo en vivo:** [portfolio-agusgut.vercel.app](https://portfolio-agusgut.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack técnico
 
-## React Compiler
+- **React** + **TypeScript**
+- **Vite** como bundler
+- **EmailJS** para el envío de mensajes desde el formulario de contacto, sin backend propio
+- Deploy continuo en **Vercel**
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Instalación local
 
-Note: This will impact Vite dev & build performances.
+Cloná el repositorio y parado en la raíz:
 
-## Expanding the ESLint configuration
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+La app va a estar disponible en `http://localhost:5173` (puerto por defecto de Vite).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Variables de entorno
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Este proyecto usa EmailJS, que requiere las siguientes variables en un archivo `.env` en la raíz:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+\`\`\`
+VITE_EMAILJS_SERVICE_ID=tu_service_id
+VITE_EMAILJS_TEMPLATE_ID=tu_template_id
+VITE_EMAILJS_PUBLIC_KEY=tu_public_key
+\`\`\`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Secciones
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Sobre mí
+- Proyectos destacados (JobTracker, CineInfo)
+- Habilidades técnicas
+- Formulario de contacto
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Autor
+
+**Agustín Thomas Gutiérrez Ioime**
+[LinkedIn](https://www.linkedin.com/in/agus-gutierrez) · [GitHub](https://github.com/agusgut0)
