@@ -18,8 +18,8 @@ export const Projects = () => {
         {
             title: "JobTracker",
             role: "Fullstack Developer",
-            description: "Aplicación web Full Stack Serverless desarrollada con JavaScript bajo arquitectura estática MVC. Se trata de un organizador inteligente para la búsqueda laboral que automatiza la generación de prompts optimizados para IA, adapta CVs a cada puesto superando con éxito los filtros ATS de reclutamiento.",
-            techStack: ["JavaScript Vanilla", "HTML5", "CSS3", "MVC", "LocalStorage", "JSON Backup", "AI Prompts"],
+            description: "Aplicación web Full Stack Serverless desarrollada con JavaScript bajo arquitectura estática MVC. Se trata de un organizador inteligente para la búsqueda laboral que automatiza la generación de prompts optimizados para IA, adapta CVs a cada puesto superando con éxito los filtros ATS de reclutamiento. Contenerizada con Docker (Nginx) y con un pipeline de CI/CD en GitHub Actions que automatiza el build y la publicación de la imagen en cada actualización.",
+            techStack: ["JavaScript Vanilla", "HTML5", "CSS3", "MVC", "LocalStorage", "JSON Backup", "AI Prompts", "Docker", "GitHub Actions"],
             githubLink: "https://github.com/agusgut0/JobTracker",
             demoLink: "https://job-tracker-black-psi.vercel.app/",
             imageSrc: "/gifs/jobTrackerDemo.gif",
