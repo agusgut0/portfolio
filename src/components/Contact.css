@@ -95,6 +95,14 @@
 }
 
 @media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    .contact-container {
+        margin-top: 16px;
+    }
+
     .contact-form {
         padding: 20px;
     }

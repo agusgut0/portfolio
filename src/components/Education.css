@@ -38,8 +38,10 @@
 
 .education-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 6px 16px;
     margin-bottom: 2px;
 }
 
@@ -68,11 +70,6 @@
 }
 
 @media (max-width: 768px) {
-    .education-item {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
     .education-header {
         flex-direction: column;
         align-items: flex-start;

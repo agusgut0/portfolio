@@ -54,10 +54,10 @@ export const ProjectCard = ({ title, role, description, techStack, githubLink, d
                     </div>
                 </div>
 
-                <div className="project-preview-wrapper">
-                    <div className="project-preview" onClick={() => setIsModalOpen(true)} style={{ cursor: 'zoom-in' }}>
+                <div className="project-media">
+                    <button type="button" className="project-preview" onClick={() => setIsModalOpen(true)} aria-label={`Ampliar vista previa de ${title}`}>
                         <img src={imageSrc} alt={title} className="project-preview-img" />
-                    </div>
+                    </button>
                     <div className="project-buttons-row">
                         <a href={demoLink} target="_blank" rel="noopener noreferrer" className="demo-external-btn" title="Ver demo">
                             Visitar Web
@@ -76,23 +76,24 @@ export const ProjectCard = ({ title, role, description, techStack, githubLink, d
                     </div>
                 </div>
 
-                <p className="project-description">{description}</p>
-                {demoCredentials && (
-                    <div className="demo-credentials">
-                        <p className="credentials-title">Credenciales de Prueba (Modo Demo):</p>
-                        <ul className="credentials-list">
-                            <li><span>Usuario:</span> {demoCredentials.user}</li>
-                            <li><span>Contraseña:</span> {demoCredentials.pass}</li>
-                        </ul>
-                    </div>
-                )}
+                <div className="project-body">
+                    <p className="project-description">{description}</p>
+                    {demoCredentials && (
+                        <div className="demo-credentials">
+                            <p className="credentials-title">Credenciales de Prueba (Modo Demo):</p>
+                            <ul className="credentials-list">
+                                <li><span>Usuario:</span> {demoCredentials.user}</li>
+                                <li><span>Contraseña:</span> {demoCredentials.pass}</li>
+                            </ul>
+                        </div>
+                    )}
 
-                <div className="project-tech">
-                    {techStack.map((tech, index) => (
-                        <span key={index} className="project-tech-badge">{tech}</span>
-                    ))}
+                    <div className="project-tech">
+                        {techStack.map((tech, index) => (
+                            <span key={index} className="project-tech-badge">{tech}</span>
+                        ))}
+                    </div>
                 </div>
-                <div style={{ clear: 'both' }}></div>
             </div>
 
             {isModalOpen && createPortal(

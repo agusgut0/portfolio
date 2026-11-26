@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ProjectCard } from './ProjectCard';
 import './Projects.css';
 
@@ -29,12 +29,43 @@ export const Projects = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    // La altura del carrusel sigue al proyecto activo (evita huecos cuando un proyecto es más corto)
+    const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [viewportHeight, setViewportHeight] = useState<number>();
+
+    useEffect(() => {
+        const slide = slideRefs.current[currentIndex];
+        if (!slide) return;
+        const observer = new ResizeObserver(() => setViewportHeight(slide.offsetHeight));
+        observer.observe(slide);
+        return () => observer.disconnect();
+    }, [currentIndex]);
+
     const nextProject = () => {
         setCurrentIndex((prev) => (prev === myProjects.length - 1 ? 0 : prev + 1));
     };
 
     const prevProject = () => {
         setCurrentIndex((prev) => (prev === 0 ? myProjects.length - 1 : prev - 1));
+    };
+
+    // Swipe horizontal en pantallas táctiles
+    const touchStart = useRef<{ x: number; y: number } | null>(null);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        const touch = e.touches[0];
+        touchStart.current = { x: touch.clientX, y: touch.clientY };
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        if (!touchStart.current) return;
+        const touch = e.changedTouches[0];
+        const dx = touch.clientX - touchStart.current.x;
+        const dy = touch.clientY - touchStart.current.y;
+        touchStart.current = null;
+        if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+        if (dx < 0) nextProject();
+        else prevProject();
     };
 
     return (
@@ -47,13 +78,24 @@ export const Projects = () => {
                     </svg>
                 </button>
 
-                <div className="carousel-viewport">
+                <div
+                    className="carousel-viewport"
+                    style={{ height: viewportHeight }}
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                >
                     <div
                         className="carousel-track"
                         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                     >
                         {myProjects.map((project, index) => (
-                            <div className="carousel-slide" key={index}>
+                            <div
+                                className="carousel-slide"
+                                key={index}
+                                ref={(el) => { slideRefs.current[index] = el; }}
+                                inert={index !== currentIndex}
+                                aria-hidden={index !== currentIndex}
+                            >
                                 <ProjectCard
                                     title={project.title}
                                     role={project.role}
@@ -79,10 +121,13 @@ export const Projects = () => {
             {/* Indicadores de carrusel (puntitos) */}
             <div className="carousel-indicators">
                 {myProjects.map((_, index) => (
-                    <div
+                    <button
+                        type="button"
                         key={index}
                         className={`indicator-dot ${index === currentIndex ? 'active' : ''}`}
                         onClick={() => setCurrentIndex(index)}
+                        aria-label={`Ver proyecto ${index + 1}`}
+                        aria-current={index === currentIndex}
                     />
                 ))}
             </div>

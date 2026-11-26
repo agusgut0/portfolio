@@ -17,13 +17,13 @@ export const Hero = () => {
                         <span className="location-icon">📍</span>
                         Córdoba, Argentina
                     </p>
-                    {/* Social icons — only visible on mobile */}
-                    <div className="profile-social-mobile">
+                    {/* Social icons — visibles cuando las barras laterales están ocultas */}
+                    <div className="profile-social">
                         <a
                             href="https://github.com/agusgut0"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="social-mobile-link"
+                            className="social-link"
                             title="GitHub"
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -34,7 +34,7 @@ export const Hero = () => {
                             href="https://linkedin.com/in/agus-gutierrez"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="social-mobile-link"
+                            className="social-link"
                             title="LinkedIn"
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -43,7 +43,7 @@ export const Hero = () => {
                         </a>
                         <a
                             href="mailto:agusgut2002@gmail.com"
-                            className="social-mobile-link"
+                            className="social-link"
                             title="Email"
                         >
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

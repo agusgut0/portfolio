@@ -32,8 +32,8 @@
 }
 
 .dev-icon {
-    width: 180px;
-    height: 180px;
+    width: clamp(130px, 13vw, 180px);
+    height: clamp(130px, 13vw, 180px);
     filter: drop-shadow(0 4px 20px rgba(79, 172, 254, 0.15));
     transition: filter 0.3s ease;
 }
@@ -42,8 +42,8 @@
     filter: drop-shadow(0 6px 28px rgba(79, 172, 254, 0.3));
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive: en tablet y mobile no hay espacio para la ilustración */
+@media (max-width: 1023px) {
     .dev-icon-wrapper {
         display: none;
     }

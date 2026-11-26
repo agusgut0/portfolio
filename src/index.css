@@ -8,11 +8,15 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  /* Escala tipográfica fluida: 16px en mobile, crece de forma continua hasta 22px en pantallas grandes */
+  font-size: clamp(16px, 13px + 0.5vw, 22px);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: #0a0a0f;
   color: #e0e0e0;
   font-family: 'Inter', sans-serif;
@@ -22,23 +26,16 @@ body {
   overflow-wrap: break-word;
 }
 
-/* Escalado SOLO para pantallas de escritorio grandes, usando font-size en vez de zoom */
-@media (min-width: 1200px) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 1600px) {
-  html {
-    font-size: 22px;
-  }
+img,
+video {
+  max-width: 100%;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
 }
 
@@ -58,4 +55,19 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #4facfe;
+}
+
+/* Respetar a quienes prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

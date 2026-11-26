@@ -38,8 +38,10 @@
 
 .experience-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 6px 16px;
     margin-bottom: 5px;
 }
 
@@ -84,9 +86,27 @@
 }
 
 @media (max-width: 768px) {
+    .experience-section {
+        padding: 40px 0;
+    }
+
+    .experience-list {
+        gap: 32px;
+        margin-top: 24px;
+    }
+
     .experience-item {
-        flex-direction: column;
-        gap: 15px;
+        gap: 14px;
+    }
+
+    .experience-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+
+    .experience-icon-wrapper svg {
+        width: 20px;
+        height: 20px;
     }
     
     .experience-header {

@@ -16,10 +16,12 @@
     min-width: 0; /* Previene que el contenido flex lo estire */
     overflow: hidden; /* Oculta los proyectos que no están en la vista actual */
     border-radius: 12px;
+    transition: height 0.4s ease;
 }
 
 .carousel-track {
     display: flex;
+    align-items: flex-start; /* Cada slide conserva su propia altura */
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
 }
@@ -30,6 +32,7 @@
     max-width: 100%;
     box-sizing: border-box;
     padding: 0 4px; /* Un mini aire para que no se peguen si hay sombras */
+    container: project-slide / inline-size;
 }
 
 /* Botones con bordes (flechas) */
@@ -67,6 +70,8 @@
 }
 
 .indicator-dot {
+    border: none;
+    padding: 0;
     width: 8px;
     height: 8px;
     border-radius: 8px; /* Usar px en vez de % evita el glitch visual en Chrome/Safari al animar a otra medida en px */
@@ -84,19 +89,21 @@
     background-color: #3d9bf0;
 }
 
-/* Responsive */
+/* Responsive: en mobile las flechas pasan debajo del proyecto para liberar ancho */
 @media (max-width: 768px) {
     .carousel-container {
-        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
     }
-    
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
+
+    .carousel-viewport {
+        flex: 1 1 100%;
+        order: -1;
+        touch-action: pan-y;
     }
-    
-    .carousel-btn svg {
-        width: 18px;
-        height: 18px;
+
+    .carousel-indicators {
+        margin-top: 16px;
     }
 }

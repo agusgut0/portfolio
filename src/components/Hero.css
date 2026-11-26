@@ -6,12 +6,12 @@
 .profile-top {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: clamp(16px, 2.5vw, 24px);
 }
 
 .profile-avatar {
-    width: 130px;
-    height: 130px;
+    width: clamp(96px, 12vw, 130px);
+    height: clamp(96px, 12vw, 130px);
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #4facfe;
@@ -27,7 +27,7 @@
 }
 
 .profile-name {
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 1.1rem + 1vw, 1.6rem);
     font-weight: 700;
     color: #ffffff;
     line-height: 1.2;
@@ -52,9 +52,28 @@
     font-size: 0.8rem;
 }
 
-/* Mobile social icons — hidden on desktop */
-.profile-social-mobile {
+/* Iconos sociales: ocultos cuando se ven las barras laterales (>= 1200px) */
+.profile-social {
     display: none;
+    align-items: center;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    margin: -6px;
+    color: #d0d0e0;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.social-link:hover {
+    color: #4facfe;
+    transform: translateY(-2px);
 }
 
 .profile-actions {
@@ -89,57 +108,53 @@
     box-shadow: 0 4px 12px rgba(224, 224, 224, 0.15);
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
+
+/* Sin barras laterales: mostrar redes en el hero */
+@media (max-width: 1199px) {
+    .profile-social {
+        display: flex;
+    }
+}
+
+/* Tablet: se quita la ilustración para dar aire al contenido */
+@media (max-width: 1023px) {
+    .profile-actions {
+        margin: 0;
+    }
+}
+
+/* Mobile: todo apilado y centrado */
 @media (max-width: 768px) {
     .profile-top {
         flex-direction: column;
         text-align: center;
-        align-items: center;
     }
 
-    .profile-avatar {
-        width: 100px;
-        height: 100px;
-    }
-
-    .profile-name {
-        font-size: 1.4rem;
-    }
-
-    .profile-location {
+    .profile-location,
+    .profile-social {
         justify-content: center;
     }
 
-    /* Show social icons on mobile */
-    .profile-social-mobile {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
+    .profile-social {
         margin-top: 8px;
     }
 
-    .social-mobile-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #d0d0e0;
-        text-decoration: none;
-        transition: color 0.25s ease, transform 0.25s ease;
-    }
-
-    .social-mobile-link:hover {
-        color: #4facfe;
-        transform: translateY(-2px);
-    }
-
     .profile-actions {
-        margin: 10px 0 0 0;
+        margin-top: 10px;
         width: 100%;
-        max-width: 250px;
+        max-width: 280px;
+    }
+}
+
+/* Mobile ancho: botones lado a lado */
+@media (min-width: 480px) and (max-width: 768px) {
+    .profile-actions {
+        flex-direction: row;
+        max-width: 420px;
     }
 
-    .dev-icon-wrapper {
-        display: none;
+    .profile-actions > a {
+        flex: 1;
     }
 }

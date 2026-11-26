@@ -102,8 +102,8 @@
     color: #a29bfe;
 }
 
-/* ===== Responsive: ocultar en mobile ===== */
-@media (max-width: 768px) {
+/* ===== Responsive: solo en pantallas anchas (en las demás, las redes se muestran en el hero) ===== */
+@media (max-width: 1199px) {
     .sidebar {
         display: none;
     }
