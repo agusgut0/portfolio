@@ -12,7 +12,7 @@ export const Hero = () => {
                 />
                 <div className="profile-info">
                     <h1 className="profile-name">Agustin Gutierrez</h1>
-                    <p className="profile-role">Fullstack Developer Web</p>
+                    <p className="profile-role">DevOps &amp; Cloud · Automatización · Agentes de IA</p>
                     <p className="profile-location">
                         <span className="location-icon">📍</span>
                         Córdoba, Argentina
