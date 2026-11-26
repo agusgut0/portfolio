@@ -5,6 +5,18 @@ import './Projects.css';
 export const Projects = () => {
     const myProjects = [
         {
+            title: "FinTech Nova",
+            role: "DevOps / Cloud Engineer",
+            description: "Plataforma bancaria de 5 microservicios en 5 lenguajes (Python, Node.js, Java, Go y .NET), contenerizada y desplegada en AWS con un pipeline de CI/CD de 38 jobs: escaneo de seguridad con gate, infraestructura con Terraform y verificación automática del deploy. El primer escaneo encontró y permitió corregir 13 vulnerabilidades críticas, y la paralelización bajó el escaneo de 48 a 8,5 minutos. Proyecto integrador de DevOps (UTN FRC), aprobado con 10.",
+            techStack: ["Docker", "Docker Compose", "GitLab CI", "GitHub Actions", "Terraform", "AWS EC2", "NGINX", "Trivy", "Semgrep", "MariaDB"],
+            githubLink: "https://github.com/agusgut0/fintech-nova",
+            // Demo en GitHub Pages con las APIs simuladas en el navegador (el deploy real va a una
+            // EC2 del sandbox de AWS Academy, que solo existe durante una sesión)
+            demoLink: "https://agusgut0.github.io/fintech-nova/",
+            imageSrc: "/gifs/fintechNovaDemo.gif",
+            iconSrc: "/fintechNovaLogo.svg"
+        },
+        {
             title: "CineInfo",
             role: "Fullstack Developer",
             description: "Aplicación web Full Stack desarrollada como proyecto universitario para la UTN FRC. Se trata de un sistema de gestión de películas que implementa APIs REST con operaciones CRUD completas y pruebas unitarias, permitiendo a usuarios autenticados administrar información sobre películas, directores y premiaciones.",
